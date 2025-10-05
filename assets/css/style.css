@@ -1,0 +1,398 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Layout components */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.hero-section {
+  background-image: url("/assets/images/img_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 52px;
+}
+
+.brand-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  line-height: 42px;
+  text-align: left;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.brand-subtitle {
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #333333;
+}
+
+.read-more-btn {
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center;
+  color: #333333;
+  background-color: #d7984e;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 30px;
+  cursor: pointer;
+  width: auto;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.read-more-btn:hover {
+  background-color: #c8874a;
+  transform: translateY(-2px);
+}
+
+.login-section {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.welcome-title {
+  font-size: 22px;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.welcome-subtitle {
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 32px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  line-height: 21px;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 30px;
+  padding: 26px 12px 26px 58px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #3333334c;
+}
+
+.input-field:focus {
+  border-color: #d7984e;
+  box-shadow: 0 0 0 3px rgba(215, 152, 78, 0.1);
+}
+
+.input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.login-btn {
+  width: 100%;
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #d7984e;
+  border: none;
+  border-radius: 30px;
+  padding: 26px 34px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #c8874a;
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.forgot-password {
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center;
+  color: #333333b2;
+  text-decoration: none;
+  margin-top: 16px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #d7984e;
+  text-decoration: underline;
+}
+
+/* Responsive media queries */
+@media (min-width: 640px) {
+  .hero-section {
+    padding: 48px 32px;
+  }
+
+  .brand-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .brand-subtitle {
+    font-size: 17px;
+    line-height: 25px;
+  }
+
+  .login-section {
+    padding: 32px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .welcome-subtitle {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .hero-section {
+    width: 64%;
+    padding: 64px 56px;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    width: 74%;
+    max-width: none;
+  }
+
+  .brand-title {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .brand-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .login-section {
+    width: 36%;
+    padding: 146px 56px 64px 56px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    min-height: 100vh;
+  }
+
+  .login-container {
+    max-width: 318px;
+  }
+
+  .welcome-title {
+    font-size: 26px;
+    line-height: 39px;
+    text-align: center;
+  }
+
+  .welcome-subtitle {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .form-container {
+    margin-left: 26px;
+  }
+
+  .forgot-password {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 180px 80px;
+  }
+
+  .brand-title {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .hero-content {
+    margin-bottom: 80px;
+    width: 60%;
+  }
+
+  .login-section {
+    padding: 180px 60px;
+  }
+
+  .login-container {
+    max-width: 380px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section {
+    padding: 200px 120px;
+  }
+
+  .login-section {
+    padding: 200px 100px;
+  }
+
+  .hero-content {
+    width: 55%;
+  }
+}
+
+/* Specific optimization for 1080p screens */
+@media (min-width: 1920px) {
+  .hero-section {
+    padding: 220px 160px;
+  }
+
+  .hero-content {
+    width: 50%;
+  }
+
+  .brand-title {
+    font-size: 48px;
+    line-height: 72px;
+  }
+
+  .brand-subtitle {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .login-section {
+    padding: 220px 120px;
+  }
+
+  .login-container {
+    max-width: 420px;
+  }
+
+  .welcome-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .welcome-subtitle {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .input-field {
+    font-size: 16px;
+    padding: 28px 16px 28px 62px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 28px 38px;
+  }
+
+  .read-more-btn {
+    font-size: 16px;
+    padding: 10px 36px;
+  }
+}
