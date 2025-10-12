@@ -246,6 +246,61 @@ img { max-width: 100%; height: auto; }
 .list li { padding: 6px 0; color: #e6e6e6; }
 .footer__bottom { background: #141519; color: #fff; font-size: 14px; padding: 14px 0; border-top: 1px solid rgba(255,255,255,.06); }
 
+/* Scroll to Top Button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--brand);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-top-btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* Snackbar */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: var(--brand);
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
 /* Responsive */
 /* Large Desktop (1920px) */
 @media (min-width: 1920px) {
