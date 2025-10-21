@@ -85,5 +85,36 @@
         </div>
       </section>
     </main>
+    <script>
+      // Handle Register Form
+      const registerForm = document.querySelector(".form-container");
+      if (registerForm) {
+        registerForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const fullName = document.querySelector(
+            'input[name="fullName"]'
+          ).value;
+          const email = document.querySelector('input[name="email"]').value;
+          const password = document.querySelector(
+            'input[name="password"]'
+          ).value;
+
+          // Store user data in session storage
+          const userData = {
+            fullName: fullName,
+            email: email,
+            registrationDate: new Date().toISOString(),
+          };
+
+          sessionStorage.setItem("userData", JSON.stringify(userData));
+          sessionStorage.setItem("isLoggedIn", "true");
+
+          // Redirect to index page
+          alert("Registrasi berhasil!");
+          window.location.href = "index.html";
+        });
+      }
+    </script>
   </body>
 </html>

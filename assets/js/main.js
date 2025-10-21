@@ -1,3 +1,4 @@
+// card hover effect
 const cards = document.querySelectorAll(".card");
 
 cards.forEach((card) => {
@@ -10,6 +11,7 @@ cards.forEach((card) => {
   });
 });
 
+// Navbar hide on scroll
 const navbar = document.querySelector(".navbar");
 let lastScroll = 0;
 
@@ -31,7 +33,7 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-// Scroll to Top Button
+// Scroll to Top Button.
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
 window.addEventListener("scroll", () => {
@@ -57,3 +59,14 @@ window.addEventListener("load", () => {
     snackbar.className = snackbar.className.replace("show", "");
   }, 3000);
 });
+
+// Confirm box for Schedule Visit
+document
+  .querySelector('a[href="#visit"]')
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    if (confirm("Apakah Anda ingin membuat jadwal kunjungan properti?")) {
+      // Jika user klik OK
+      window.location.href = "#visit";
+    }
+  });
