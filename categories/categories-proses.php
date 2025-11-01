@@ -2,13 +2,13 @@
 if(isset($_POST['simpan'])) {
     $categories = $_POST['categories'];
     $price = $_POST['price'];
-    $description= $_POST['description'];
+    $Description= $_POST['Description'];
     $image = $_FILES['photo']['name'];
 
     echo
     'Categories : ' . $categories . 
     '<br> Price : ' . $price .
-    '<br> Description : '. $description .
+    '<br> Description : '. $Description .
     '<br> File name : ' . $image; 
 }
 ?>
