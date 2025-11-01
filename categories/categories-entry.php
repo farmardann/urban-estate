@@ -2,44 +2,43 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="../assets/icon.png" />
-    <link rel="stylesheet" href="/assets/css/dashboard.css" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UrbanEstate Admin | Categories</title>
+    <title>UrbanEstate Admin | Categories Entry</title>
   </head>
 
   <body>
     <div class="sidebar">
       <div class="logo-details">
-        <i class="bx bx-buildings"></i>
+        <i class="bx bx-category"></i>
         <span class="logo_name">UrbanEstate</span>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="../dashboard.html" class="active">
+          <a href="../dashboard.php" class="active">
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="../categories/categories.html">
+          <a href="../categories/categories.php">
             <i class="bx bx-box"></i>
             <span class="links_name">Categories</span>
           </a>
         </li>
         <li>
-          <a href="../transaction/transaction.html">
+          <a href="../transaction/transaction.php">
             <i class="bx bx-list-ul"></i>
             <span class="links_name">Transaction</span>
           </a>
         </li>
         <li>
-          <a href="/login.html">
+          <a href="../login.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -56,35 +55,45 @@
         </div>
       </nav>
       <div class="home-content">
-        <h3>Categories</h3>
-        <button type="button" class="btn btn-tambah">
-          <a href="categories-entry.html">Tambah Data</a>
-        </button>
-        <table class="table-data">
-          <thead>
-            <tr>
-              <th scope="col" style="width: 20%">Photo</th>
-              <th>Categories</th>
-              <th scope="col" style="width: 20%">Description</th>
-              <th scope="col" style="width: 15%">Price</th>
-              <th scope="col" style="width: 30%">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><img src="../assets/images/villa1.png" alt="" /></td>
-              <td>Villa</td>
-              <td>Cinematic dan Modern.</td>
-              <td>450.000.000</td>
-              <td>
-                <button class="btn-edit" onclick="editCategory()">Edit</button>
-                <button class="btn-delete" onclick="deleteCategory()">
-                  Hapus
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h3>Input Categories</h3>
+        <div class="form-login">
+          <form action="categories-proses.php" method="post" enctype="multipart/form-data">
+            <label for="categories">Categories</label>
+            <input
+              class="input"
+              type="text"
+              name="categories"
+              id="categories"
+              placeholder="Categories"
+            />
+            <label for="categories">Price</label>
+            <input
+              class="input"
+              type="text"
+              name="price"
+              id="price"
+              placeholder="Price"
+            />
+            <label for="categories">Description</label>
+            <input
+              class="input"
+              type="text"
+              name="Description"
+              id="Description"
+              placeholder="Description"
+            />
+            <label for="photo">Photo</label>
+            <input
+              type="file"
+              name="photo"
+              id="photo"
+              style="margin-bottom: 20px"
+            />
+            <button type="submit" class="btn btn-simpan" name="simpan">
+              Simpan
+            </button>
+          </form>
+        </div>
       </div>
     </section>
     <script>

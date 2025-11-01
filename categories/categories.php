@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/assets/css/dashboard.css" />
+    <link rel="icon" href="../assets/icon.png" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
     <!-- Boxicons CDN Link -->
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
       rel="stylesheet"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UrbanEstate Admin | Transaction</title>
+    <title>UrbanEstate Admin | Categories</title>
   </head>
 
   <body>
     <div class="sidebar">
       <div class="logo-details">
-        <i class="bx bx-category"></i>
+        <i class="bx bx-buildings"></i>
         <span class="logo_name">UrbanEstate</span>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="../dashboard.html" class="active">
+          <a href="../dashboard.php" class="active">
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="../categories/categories.html">
+          <a href="../categories/categories.php">
             <i class="bx bx-box"></i>
             <span class="links_name">Categories</span>
           </a>
         </li>
         <li>
-          <a href="../transaction/transaction.html">
+          <a href="../transaction/transaction.php">
             <i class="bx bx-list-ul"></i>
             <span class="links_name">Transaction</span>
           </a>
         </li>
         <li>
-          <a href="/login.html">
+          <a href="../login.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -55,37 +56,33 @@
         </div>
       </nav>
       <div class="home-content">
-        <h3>Transaction</h3>
+        <h3>Categories</h3>
+        <button type="button" class="btn btn-tambah">
+          <a href="categories-entry.php">Tambah Data</a>
+        </button>
         <table class="table-data">
           <thead>
             <tr>
-              <th>Tanggal</th>
-              <th>Nama</th>
-              <th>Kategori</th>
-              <th>Harga</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th scope="col" style="width: 20%">Photo</th>
+              <th>Categories</th>
+              <th scope="col" style="width: 20%">Description</th>
+              <th scope="col" style="width: 15%">Price</th>
+              <th scope="col" style="width: 30%">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>05-10-2025</td>
-              <td>Fardan</td>
+              <td><img src="../assets/images/villa1.png" alt="" /></td>
               <td>Villa</td>
+              <td>Cinematic dan Modern.</td>
               <td>450.000.000</td>
               <td>
-                <p class="success">Success</p>
-              </td>
-              <td>
-                <button
-                  class="btn_detail"
-                  onclick="showDetails('05-10-2025', 'Fardan', 'Villa', '450.000.000', 'Success')"
-                >
-                  Detail
+                <button class="btn-edit" onclick="editCategory()">Edit</button>
+                <button class="btn-delete" onclick="deleteCategory()">
+                  Hapus
                 </button>
               </td>
             </tr>
-            <!-- Add more rows as needed -->
           </tbody>
         </table>
       </div>
@@ -99,11 +96,6 @@
           sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
       };
-      function showDetails(tanggal, nama, kategori, harga, status) {
-        alert(
-          `Tanggal: ${tanggal}\nNama: ${nama}\nKategori: ${kategori}\nHarga: ${harga}\nStatus: ${status}`
-        );
-      }
     </script>
   </body>
 </html>

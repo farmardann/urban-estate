@@ -1,10 +1,12 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UrbanEstate Login | Peer-to-Peer Real Estate Platform</title>
 
-    <link rel="stylesheet" href="/assets/css/login.css" />
+  <link rel="stylesheet" href="assets/css/login.css" />
+
   </head>
   <body>
     <main class="main-container">
@@ -17,7 +19,7 @@
             </p>
           </div>
           <a
-            href="index.html"
+            href="index.php"
             class="read-more-btn"
             style="text-decoration: none"
             >Read More</a
@@ -33,7 +35,7 @@
           <form class="form-container">
             <div class="input-group">
               <img
-                src="/assets/images/img_codiconmail.svg"
+                src="assets/images/img_codiconmail.svg"
                 alt="Email icon"
                 class="input-icon"
               />
@@ -47,7 +49,7 @@
 
             <div class="input-group">
               <img
-                src="/assets/images/img_bxbxslockalt.svg"
+                src="assets/images/img_bxbxslockalt.svg"
                 alt="Password icon"
                 class="input-icon"
               />
@@ -62,7 +64,7 @@
             <button type="submit" class="login-btn">Login</button>
 
             <a href="#" class="forgot-password">Forgot Password</a>
-            <a href="register.html" class="forgot-password">Register</a>
+            <a href="register.php" class="forgot-password">Register</a>
           </form>
         </div>
       </section>

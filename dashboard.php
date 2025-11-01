@@ -25,19 +25,19 @@
           </a>
         </li>
         <li>
-          <a href="categories/categories.html">
+          <a href="categories/categories.php">
             <i class="bx bx-box"></i>
             <span class="links_name">Categories</span>
           </a>
         </li>
         <li>
-          <a href="transaction/transaction.html">
+          <a href="transaction/transaction.php">
             <i class="bx bx-list-ul"></i>
             <span class="links_name">Transaction</span>
           </a>
         </li>
         <li>
-          <a href="login.html">
+          <a href="login.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>

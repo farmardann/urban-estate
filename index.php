@@ -1,3 +1,8 @@
+<?php
+$cookie_name = "user";
+$cookie_value = getenv("username") ?: 'guest';
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -10,9 +15,17 @@
       href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&family=Saira:ital,wght@0,400;0,500;0,600;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <?php
+    // tampilkan status cookie (bisa dihapus untuk produksi)
+    if(!isset($_COOKIE[$cookie_name])) {
+      echo '<div class="cookie-status">Cookie named "' . htmlspecialchars($cookie_name) . '" is not set! (refresh setelah set)</div>';
+    } else {
+      echo '<div class="cookie-status">Cookie "' . htmlspecialchars($cookie_name) . '" is set! Value: ' . htmlspecialchars($_COOKIE[$cookie_name]) . '</div>';
+    }
+    ?>
     <div id="snackbar">Selamat Datang di UrbanEstate! 👋</div>
     <!-- Header Top -->
     <header class="topbar">
@@ -22,11 +35,11 @@
           <strong>Opening hours:</strong> Mon - Sat 9:00 am to 6:00 pm
         </p>
         <nav class="topbar__right">
-          <a href="login.html">Login</a>
+          <a href="login.php">Login</a>
           <span class="sep"></span>
-          <a class="accent" href="register.html">Register</a>
+          <a class="accent" href="register.php">Register</a>
           <span class="sep"></span>
-          <a href="dashboard.html" aria-label="Dashboard">Dashboard</a>
+          <a href="dashboard.php" aria-label="Dashboard">Dashboard</a>
         </nav>
       </div>
     </header>

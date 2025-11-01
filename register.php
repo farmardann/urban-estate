@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +7,7 @@
       UrbanEstate Registration | Join SEA's Leading Real Estate Platform
     </title>
 
-    <link rel="stylesheet" href="/assets/css/register.css" />
+  <link rel="stylesheet" href="assets/css/register.css" />
   </head>
   <body>
     <main class="main-container">
@@ -19,7 +20,7 @@
             </p>
           </div>
           <a
-            href="index.html"
+            href="index.php"
             class="read-more-btn"
             style="text-decoration: none"
             >Read More</a
@@ -37,7 +38,7 @@
           <form class="form-container" action="#" method="POST">
             <div class="input-group">
               <img
-                src="../assets/images/img_bxbxsuser.svg"
+                src="assets/images/img_bxbxsuser.svg"
                 alt="User icon"
                 class="input-icon"
               />
@@ -52,7 +53,7 @@
 
             <div class="input-group">
               <img
-                src="../assets/images/img_codiconmail.svg"
+                src="assets/images/img_codiconmail.svg"
                 alt="Email icon"
                 class="input-icon"
               />
@@ -67,7 +68,7 @@
 
             <div class="input-group">
               <img
-                src="../assets/images/img_bxbxslockalt.svg"
+                src="assets/images/img_bxbxslockalt.svg"
                 alt="Lock icon"
                 class="input-icon"
               />
@@ -112,7 +113,7 @@
 
           // Redirect to index page
           alert("Registrasi berhasil!");
-          window.location.href = "index.html";
+          window.location.href = "index.php";
         });
       }
     </script>
