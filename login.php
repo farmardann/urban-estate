@@ -31,37 +31,25 @@
         <div class="login-container">
           <h2 class="welcome-title">Hello Again!</h2>
           <p class="welcome-subtitle">Welcome Back</p>
-
-          <form class="form-container">
+          <form class="form-container" action="login-proses.php" method="POST">
             <div class="input-group">
-              <img
-                src="assets/images/img_codiconmail.svg"
-                alt="Email icon"
-                class="input-icon"
-              />
               <input
                 type="email"
+                name="email"
                 class="input-field"
                 placeholder="Email Address"
                 required
               />
-            </div>
-
-            <div class="input-group">
-              <img
-                src="assets/images/img_bxbxslockalt.svg"
-                alt="Password icon"
-                class="input-icon"
-              />
               <input
                 type="password"
+                name="password"
                 class="input-field"
                 placeholder="Password"
                 required
               />
             </div>
 
-            <button type="submit" class="login-btn">Login</button>
+            <button type="submit" class="login-btn" name="login" id="login">Login</button>
 
             <a href="#" class="forgot-password">Forgot Password</a>
             <a href="register.php" class="forgot-password">Register</a>

@@ -35,87 +35,57 @@
             <p class="welcome-subtitle">Sign Up to Get Started</p>
           </div>
 
-          <form class="form-container" action="#" method="POST">
+          <form class="form-container" action="register-proses.php" method="post">
             <div class="input-group">
-              <img
-                src="assets/images/img_bxbxsuser.svg"
-                alt="User icon"
-                class="input-icon"
-              />
-              <input
-                type="text"
-                class="form-input"
-                placeholder="Full Name"
-                name="fullName"
-                required
-              />
-            </div>
+              <div class="input-group">
+                <img
+                  src="assets/images/img_bxbxsuser.svg"
+                  alt="User icon"
+                  class="input-icon"
+                />
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Username"
+                  name="username"
+                  required
+                />
+              </div>
 
-            <div class="input-group">
-              <img
-                src="assets/images/img_codiconmail.svg"
-                alt="Email icon"
-                class="input-icon"
-              />
-              <input
-                type="email"
-                class="form-input"
-                placeholder="Email Address"
-                name="email"
-                required
-              />
-            </div>
+              <div class="input-group">
+                <img
+                  src="assets/images/img_codiconmail.svg"
+                  alt="Email icon"
+                  class="input-icon"
+                />
+                <input
+                  type="email"
+                  class="form-input"
+                  placeholder="Email Address"
+                  name="email"
+                  required
+                />
+              </div>
 
-            <div class="input-group">
-              <img
-                src="assets/images/img_bxbxslockalt.svg"
-                alt="Lock icon"
-                class="input-icon"
-              />
-              <input
-                type="password"
-                class="form-input"
-                placeholder="Password"
-                name="password"
-                required
-              />
+              <div class="input-group">
+                <img
+                  src="assets/images/img_bxbxslockalt.svg"
+                  alt="Lock icon"
+                  class="input-icon"
+                />
+                <input
+                  type="password"
+                  class="form-input"
+                  placeholder="Password"
+                  name="password"
+                  required
+                />
+              </div>
             </div>
-
-            <button type="submit" class="register-button">Register</button>
+            <button type="submit" class="register-button" name="register" id="register" >Register</button>
           </form>
         </div>
       </section>
     </main>
-    <script>
-      // Handle Register Form
-      const registerForm = document.querySelector(".form-container");
-      if (registerForm) {
-        registerForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const fullName = document.querySelector(
-            'input[name="fullName"]'
-          ).value;
-          const email = document.querySelector('input[name="email"]').value;
-          const password = document.querySelector(
-            'input[name="password"]'
-          ).value;
-
-          // Store user data in session storage
-          const userData = {
-            fullName: fullName,
-            email: email,
-            registrationDate: new Date().toISOString(),
-          };
-
-          sessionStorage.setItem("userData", JSON.stringify(userData));
-          sessionStorage.setItem("isLoggedIn", "true");
-
-          // Redirect to index page
-          alert("Registrasi berhasil!");
-          window.location.href = "index.php";
-        });
-      }
-    </script>
   </body>
 </html>

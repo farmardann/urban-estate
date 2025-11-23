@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	if($_SESSION['username'] == null) {
+		header('location:../login.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -62,31 +69,31 @@
             <input
               class="input"
               type="text"
-              name="categories"
-              id="categories"
-              placeholder="Categories"
+              name="kategori"
+              id="kategori"
+              placeholder="Kategori"
             />
             <label for="categories">Price</label>
             <input
               class="input"
               type="text"
-              name="price"
-              id="price"
-              placeholder="Price"
+              name="harga"
+              id="harga"
+              placeholder="Harga"
             />
             <label for="categories">Description</label>
             <input
               class="input"
               type="text"
-              name="Description"
-              id="Description"
-              placeholder="Description"
+              name="deskripsi"
+              id="deskripsi"
+              placeholder="Deskripsi"
             />
             <label for="photo">Photo</label>
             <input
               type="file"
-              name="photo"
-              id="photo"
+              name="foto"
+              id="foto"
               style="margin-bottom: 20px"
             />
             <button type="submit" class="btn btn-simpan" name="simpan">
