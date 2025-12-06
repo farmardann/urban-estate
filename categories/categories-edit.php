@@ -84,6 +84,15 @@
             >
                <input type="hidden" name="id" value="<?= $data['id'] ?>">
                <input type="hidden" name="fotoLama" value="<?= $data['foto'] ?>">
+               <label for="categories">Name</label>
+               <input
+                 class="input"
+                 type="text"
+                 name="nama_properti"
+                 id="nama_properti"
+                 placeholder="nama_properti"
+                 value="<?= $data['nama_properti'] ?>"
+               />
                <label for="categories">Categories</label>
                <input
                  class="input"

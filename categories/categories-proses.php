@@ -45,6 +45,7 @@ function upload() {
 }
 
 if(isset($_POST['simpan'])) {
+    $nama_properti = $_POST['nama_properti'];
     $kategori = $_POST['kategori'];
     $harga = $_POST['harga'];
     $deskripsi = $_POST['deskripsi'];
@@ -55,7 +56,7 @@ if(isset($_POST['simpan'])) {
     }
     // var_dump($foto, $kategori, $harga, $deskripsi);
 
-    $sql = "INSERT INTO tb_properti VALUES(NULL, '$foto', '$kategori', '$deskripsi','$harga')";
+    $sql = "INSERT INTO tb_properti VALUES(NULL, '$nama_properti', '$foto', '$kategori', '$deskripsi','$harga')";
 
     if(empty($kategori) || empty($harga)|| empty($deskripsi)) {
         echo "
@@ -81,6 +82,7 @@ if(isset($_POST['simpan'])) {
     }
 }elseif(isset($_POST['edit'])) {
     $id         = $_POST['id'];
+    $nama_properti = $_POST['nama_properti'];
     $kategori = $_POST['kategori'];
     $harga      = $_POST['harga'];
     $deskripsi = $_POST['deskripsi'];
@@ -97,6 +99,7 @@ if(isset($_POST['simpan'])) {
 
     $sql = "UPDATE tb_properti SET 
             foto = '$foto',
+            nama_properti = '$nama_properti',
             kategori = '$kategori',
             harga = '$harga',
             deskripsi = '$deskripsi'

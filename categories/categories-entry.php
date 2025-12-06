@@ -45,7 +45,7 @@
           </a>
         </li>
         <li>
-          <a href="../login.php">
+          <a href="../logout.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -65,6 +65,14 @@
         <h3>Input Categories</h3>
         <div class="form-login">
           <form action="categories-proses.php" method="post" enctype="multipart/form-data">
+            <label for="categories">Name</label>
+            <input
+              class="input"
+              type="text"
+              name="nama_properti"
+              id="nama_properti"
+              placeholder="nama_properti"
+            />
             <label for="categories">Categories</label>
             <input
               class="input"

@@ -53,9 +53,9 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
       <nav class="menu">
         <a class="active" href="#home">Home</a>
         <a href="#about">About Us</a>
-        <a href="#apartments">Apartments</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects">Apartments</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#footer">Contact</a>
       </nav>
     </div>
 
@@ -147,29 +147,56 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
         <p class="eyebrow">Our BEST PROJECTS</p>
         <h2>Property Investment Assisting Projects House lucrative.</h2>
       </div>
-      <div class="container grid-3">
-        <article class="project">
-          <img src="assets/images/villa1.png" alt="p1" />
-          <div class="project__meta">
-            <h3>Apartment new Rooms</h3>
-            <p>London City, House 586, CAB</p>
+        <div class="container grid-3">
+            <?php
+            // 1. Sertakan file koneksi database
+            include 'koneksi.php';
+
+            // 2. Query untuk mengambil semua data properti
+            $sql = "SELECT * FROM tb_properti";
+            $result = mysqli_query($koneksi, $sql);
+
+            // 3. Cek jika tidak ada data
+            if (mysqli_num_rows($result) == 0) {
+                echo "
+                <div style='text-align: center; grid-column: 1 / -1;'>
+                    <h3 style='color: red;'>Tidak Ada Data Properti Tersedia.</h3>
+                </div>";
+            } else {
+                // 4. Loop untuk menampilkan setiap properti
+                while ($data = mysqli_fetch_assoc($result)) {
+                    // Pastikan nama kolom sesuai dengan nama kolom di tabel Anda
+                    $nama = htmlspecialchars($data['nama_properti'] ?? 'Nama Properti');
+                    $kategori = htmlspecialchars($data['kategori'] ?? 'Kategori');
+                    $harga = htmlspecialchars($data['harga'] ?? 'Hubungi Kami');
+                    $deskripsi = htmlspecialchars($data['deskripsi'] ?? 'Deskripsi singkat properti...');
+                    $foto = htmlspecialchars($data['foto'] ?? 'default.jpg');
+                    $id_properti = htmlspecialchars($data['id'] ?? '0');
+                    
+                    echo "
+                    <div class='project__card'>
+                        <div class='project__image'>
+                            <img src='img_categories/$foto' alt='$nama' />
+                        </div>
+                        <div class='project__meta'>
+                        <h3>$nama</h3>
+                        <ul class='facts'>
+                            <li><span>Deskripsi</span><b>$deskripsi</b></li>
+                            <li><span>Kategori</span><b>$kategori</b></li>
+                            <li><span>Harga</span><b>$harga</b></li>
+                        </ul>
+                            
+                            <a class='btn btn--dark small' href='transaction/transaction-entry.php'>
+                                Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+                    ";
+                }
+            }
+            ?>
           </div>
-        </article>
-        <article class="project project--dark">
-          <img src="assets/images/villa1.png" alt="p2" />
-          <div class="project__meta">
-            <h3>Innovative Spaces house</h3>
-            <p>London City, House 586, CAB</p>
-          </div>
-        </article>
-        <article class="project">
-          <img src="assets/images/villa1.png" alt="p3" />
-          <div class="project__meta">
-            <h3>London Home City Room</h3>
-            <p>London City, House 586, CAB</p>
-          </div>
-        </article>
-      </div>
+        </div>
     </section>
 
     <!-- Plans / Facts -->
@@ -186,7 +213,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
             <li><span>Parking</span><b>09</b></li>
             <li><span>Pricing</span><b>$66/M4</b></li>
           </ul>
-          <a class="btn btn--dark" href="#visit">Schedule Visit Now</a>
+          <a class="btn btn--dark" href="#projects">Schedule Visit Now</a>
         </div>
         <div class="card-lg">
           <img src="assets/images/villa1.png" alt="plan" />
@@ -195,7 +222,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     </section>
 
     <!-- Testimonial -->
-    <section class="section testimonial">
+    <section id="testimoni" class="section testimonial">
       <div class="container center">
         <p class="eyebrow">our testimonial say</p>
         <h2>What Our Client Says This Best off Property</h2>
@@ -242,7 +269,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="footer" class="footer">
       <div class="container footer__grid">
         <div>
           <div class="brand brand--footer">

@@ -178,6 +178,30 @@ nav .profile-details .admin_name {
 	padding-right: 20px;
 }
 
+.dashboard-widgets {
+	display: flex;
+	gap: 16px;
+	margin-top: 18px;
+	flex-wrap: wrap;
+}
+.widget {
+	background: #fff;
+	padding: 18px;
+	border-radius: 8px;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+	min-width: 160px;
+	text-align: center;
+}
+.widget h4 {
+	font-size: 14px;
+	color: #333;
+	margin-bottom: 6px;
+}
+.widget-count {
+	font-size: 22px;
+	font-weight: 700;
+	color: #d7984e;
+}
 .btn {
 	background-color: #d7984e;
 	color: white;

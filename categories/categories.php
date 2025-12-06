@@ -69,6 +69,7 @@ if ($_SESSION['username'] == null) {
 				<thead>
 					<tr>
 						<th scope="col" style="width: 20%">Photo</th>
+						<th>Name</th>
 						<th>Categories</th>
 						<th scope="col" style="width: 30%">Description</th>
 						<th scope="col" style="width: 15%">Price</th>
@@ -95,6 +96,7 @@ if ($_SESSION['username'] == null) {
                       <td>
                         <img src='../img_categories/$data[foto]' width='200px'>
                       </td>
+                      <td>$data[nama_properti]</td>
                       <td>$data[kategori]</td>
 					  <td>$data[deskripsi]</td>
                       <td>$data[harga]</td>

@@ -3,6 +3,32 @@
 	if($_SESSION['username'] == null) {
 		header('location:login.php');
 	}
+  // koneksi database untuk widget
+include 'koneksi.php';
+
+// hitung jumlah properti
+$count_properties = 0;
+$res = mysqli_query($koneksi, "SELECT COUNT(*) AS cnt FROM tb_properti");
+if ($res) {
+  $r = mysqli_fetch_assoc($res);
+  $count_properties = isset($r['cnt']) ? $r['cnt'] : 0;
+}
+
+// hitung jumlah admin
+$count_admins = 0;
+$res2 = mysqli_query($koneksi, "SELECT COUNT(*) AS cnt FROM tb_admin");
+if ($res2) {
+  $r2 = mysqli_fetch_assoc($res2);
+  $count_admins = isset($r2['cnt']) ? $r2['cnt'] : 0;
+}
+
+// hitung jumlah pembayaran
+$count_transaction = 0;
+$res3 = mysqli_query($koneksi, "SELECT COUNT(*) AS cnt FROM tb_pembayaran");
+if ($res3) {
+  $r3 = mysqli_fetch_assoc($res3);
+  $count_transaction = isset($r3['cnt']) ? $r3['cnt'] : 0;
+}
 ?>
 
 <!DOCTYPE html>
@@ -67,6 +93,21 @@
       ?>
       </h2>
       <h3 id="date"></h3>
+      <br>
+      <div class="dashboard-widgets">
+        <div class="widget">
+          <h4>Properties</h4>
+          <p class="widget-count"><?php echo $count_properties; ?></p>
+        </div>
+        <div class="widget">
+          <h4>Admins</h4>
+          <p class="widget-count"><?php echo $count_admins; ?></p>
+        </div>
+        <div class="widget">
+          <h4>Transaction</h4>
+          <p class="widget-count"><?php echo $count_transaction; ?></p>
+        </div>
+      </div>
       </div>
     </section>
     <script>
