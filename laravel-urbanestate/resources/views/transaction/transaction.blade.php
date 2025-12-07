@@ -6,7 +6,7 @@
 @section('content')
     <h3>Transaction</h3>
     <button type="button" class="btn btn-tambah">
-        <a href="/transaction/cetak">Cetak</a>
+        <a href="/transaksi/cetak">Cetak</a>
     </button>
     <table class="table-data">
         <thead>

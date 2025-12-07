@@ -19,7 +19,7 @@
         <header>
             <nav>
                 <div class="logo">
-                    <img src="{{ asset('assets/logo.png') }}" alt="" />
+                    <img src="{{ asset('assets/logo(1).png') }}" alt="" />
                 </div>
                 <input type="checkbox" id="click" />
                 <label for="click" class="menu-btn">
@@ -35,17 +35,18 @@
         <main>
             <div class="jumbotron">
                 <div class="jumbotron-text">
-                    <h1>Cari Kucing Kecil Barumu, Jadilah Temannya</h1>
-                    <p>Teman barumu yang lucu menunggu mu, ayo temukan mereka sekarang</p>
-                    <button type="button" class="btn_getStarted">Mulai</button>
+                    <h1>Many Property Service Best Home</h1>
+                    <p>We provide the most House and modern design place for companies and
+            businesses home</p>
+                    <button type="button" href="#grid-3" class="btn_getStarted">Start</button>
                 </div>
                 <div class="jumbotron-img">
-                    <img src="assets/jumbotron.png" alt="" />
+                    <img src="assets/modernhs.png" alt="" />
                 </div>
             </div>
             <div class="cards-categories">
-                <h2>Kategori Kucing</h2>
-                <div class="card-categories">
+                <h2>Kategori Properti</h2>
+                <div class="grid-3">
                     @if (count($categories) == 0)
                         <h3 style="text-align: center; color: red;">Data Kosong</h3>
                     @endif
@@ -171,7 +172,7 @@
 
         </main>
         <footer>
-            <h4>&copy; Lab Pemrograman Komputer 2025</h4>
+            <h4>&copy; Copyright © 2025 UrbanEstate. All Rights Reserved.</h4>
         </footer>
     </div>
     <script>
